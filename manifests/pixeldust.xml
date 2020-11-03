@@ -50,6 +50,7 @@
   <project path="hardware/qcom/sdm845/display" name="android_hardware_qcom_sdm845_display" remote="pd11" />
 
   <!-- android11-d1-s7-release -->
+  <project path="hardware/google/pixel-sepolicy" name="platform/hardware/google/pixel-sepolicy" groups="generic_fs,pixel" revision="android11-d1-s7-release" />
   <project path="hardware/qcom/sm7250/display" name="platform/hardware/qcom/sm7250/display" groups="qcom_sm7250" revision="android11-d1-s7-release" />
   <project path="hardware/qcom/sm7250/gps" name="platform/hardware/qcom/sm7250/gps" groups="qcom_sm7250" revision="android11-d1-s7-release" >
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sm7250/Android.mk" />
