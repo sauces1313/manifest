@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remote  name="aosp_r17"
+           fetch="https://android.googlesource.com/"
+           revision="refs/tags/android-11.0.0_r17" />
+
   <remote  name="github"
            fetch="https://github.com/" />
 
@@ -34,6 +38,7 @@
 
   <!-- External -->
   <project path="external/airbnb-lottie" name="android_external_airbnb-lottie" remote="pd11" />
+  <project path="external/boringssl" name="android_external_boringssl" remote="pd11" />
   <project path="external/guice" name="android_external_guice" remote="pd11" />
   <project path="external/selinux" name="android_external_selinux" remote="pd11" />
   <project path="external/motorola/faceunlock" name="pupal-inc/android_external_prebuilt_fu" remote="gitlab" revision="11" />
@@ -41,6 +46,7 @@
   <!-- Frameworks -->
   <project path="frameworks/av" name="android_frameworks_av" remote="pd11" />
   <project path="frameworks/base" name="android_frameworks_base" remote="pd11" />
+  <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" remote="pd11" />
   <project path="frameworks/native" name="android_frameworks_native" remote="pd11" />
 
   <!-- Hardware -->
@@ -49,6 +55,11 @@
   <project path="hardware/qcom/display" name="android_hardware_qcom_display" remote="pd11" />
   <project path="hardware/qcom/media" name="android_hardware_qcom_media" remote="pd11" />
   <project path="hardware/qcom/sdm845/display" name="android_hardware_qcom_sdm845_display" remote="pd11" />
+  <project path="hardware/qcom/sdm845/media" name="android_hardware_qcom_sdm845_media" remote="pd11" />
+
+  <!-- AOSP legacy hardware -->
+  <project path="hardware/qcom/msm8998" name="platform/hardware/qcom/msm8998" groups="qcom_msm8998,pdk-qcom" remote="aosp_r17" />
+  <project path="hardware/qcom/neuralnetworks/hvxservice" name="platform/hardware/qcom/neuralnetworks/hvxservice" groups="wahoo" remote="aosp_r17" />
 
   <!-- Native -->
   <project path="bionic" name="android_bionic" remote="pd11" />
@@ -59,13 +70,17 @@
   <project path="packages/apps/Seedvault" name="android_packages_apps_Seedvault" remote="pd11" />
   <project path="packages/apps/Settings/PixelDustSettings" name="android_packages_apps_PixelDustSettings" remote="pd11" />
   <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="pd11" />
+  <project path="packages/apps/SimpleDeviceConfig" name="android_packages_apps_SimpleDeviceConfig" remote="pd11" />
   <project path="packages/apps/Themes" name="android_packages_apps_Themes" remote="pd11" />
   <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="pd11" />
+  <project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="pd11" />
+  <project path="packages/apps/WallpaperPicker2" name="android_packages_apps_WallpaperPicker2" remote="pd11" />
   <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" remote="pd11" />
   <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="pd11" />
 
   <!-- Prebuilts -->
   <project path="prebuilts/abi-dumps/vndk" name="android_prebuilts_abi-dumps_vndk" remote="pd11" />
+  <project path="prebuilts/clang/host/linux-x86" name="android_prebuilts_clang_host_linux-x86" remote="pd11" />
 
   <!-- Recovery -->
   <project path="bootable/recovery" name="android_bootable_recovery" remote="pd11" />
@@ -75,6 +90,8 @@
   <project path="system/bt" name="android_system_bt" remote="pd11" />
   <project path="system/core" name="android_system_core" remote="pd11" />
   <project path="system/incremental_delivery" name="android_system_incremental_delivery" remote="pd11" />
+  <project path="system/netd" name="android_system_netd" remote="pd11" />
+  <project path="system/security" name="android_system_security" remote="pd11" />
   <project path="system/sepolicy" name="android_system_sepolicy" remote="pd11" />
   <project path="system/update_engine" name="android_system_update_engine" remote="pd11" />
   <project path="system/vold" name="android_system_vold" remote="pd11" />
@@ -85,9 +102,17 @@
     <copyfile src="build.sh" dest="rom-build.sh" />
     <linkfile src="tools/merge-aosp.sh" dest="merge-aosp.sh" />
   </project>
+  <project path="vendor/support" name="android_vendor_support" remote="pd11" />
   <project path="vendor/themes" name="android_vendor_themes" remote="pd11" />
   <project path="vendor/qcom/opensource/audio" name="android_vendor_qcom_opensource_audio" remote="pd11" />
   <project path="vendor/qcom/opensource/dataservices" name="android_vendor_qcom_opensource_dataservices" remote="pd11" />
   <project path="vendor/qcom/opensource/interfaces" name="android_vendor_qcom_opensource_interfaces" remote="pd11" />
+
+  <!-- AOSP Different Revisions -->
+  <project path="external/google-fonts/barlow" name="platform/external/google-fonts/barlow" revision="android11-d1-release" />
+  <project path="external/google-fonts/big-shoulders-text" name="platform/external/google-fonts/big-shoulders-text" revision="android11-d1-release" />
+  <project path="external/google-fonts/fraunces" name="platform/external/google-fonts/fraunces" revision="android11-d1-release" />
+  <project path="external/google-fonts/karla" name="platform/external/google-fonts/karla" revision="android11-d1-release" />
+  <project path="external/google-fonts/lustria" name="platform/external/google-fonts/lustria" revision="android11-d1-release" />
 
 </manifest>
