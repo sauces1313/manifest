@@ -832,7 +832,8 @@
   <include name="manifests/remove.xml"/>
   <include name="manifests/pixeldust.xml"/>
 
-  <!-- Lineage snippets -->
+  <!-- More snippets -->
   <include name="manifests/lineage.xml"/>
+  <include name="manifests/proton.xml"/>
 
 </manifest>
