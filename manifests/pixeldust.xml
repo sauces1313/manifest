@@ -14,17 +14,21 @@
   <remote  name="pd11"
            fetch="https://github.com/PixelDust-Eleven"
            revision="refs/heads/11" />
+
+  <remote  name="opt"
+           fetch="https://github.com/PixelDust-Eleven"
+           revision="refs/heads/opt" />
   
-    <remote  name="pdd"
+  <remote  name="pdd"
            fetch="https://github.com/PixelDust-Devices"
            revision="refs/heads/11" />
 
   <!-- Manifest -->
-  <project path="manifest" name="manifest" remote="pd11" />
+  <project path="manifest" name="manifest" remote="opt" />
 
   <!-- Build -->
   <project path="art" name="android_art" remote="pd11" />
-  <project path="build/make" name="android_build" groups="pdk" remote="pd11" >
+  <project path="build/make" name="android_build" groups="pdk" remote="opt" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -33,12 +37,12 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="pd11" >
+  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="opt" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
   <project path="build/blueprint" name="android_build_blueprint" remote="pd11" />
-  <project path="libcore" name="android_libcore" remote="pd11" />
+  <project path="libcore" name="android_libcore" remote="opt" />
   <project path="platform_testing" name="android_platform_testing" remote="pd11" />
 
   <!-- External -->
@@ -51,7 +55,7 @@
 
   <!-- Frameworks -->
   <project path="frameworks/av" name="android_frameworks_av" remote="pd11" />
-  <project path="frameworks/base" name="android_frameworks_base" remote="pd11" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="opt" />
   <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" remote="pd11" />
   <project path="frameworks/native" name="android_frameworks_native" remote="pd11" />
 
@@ -66,7 +70,7 @@
   <project path="hardware/qcom/neuralnetworks/hvxservice" name="platform/hardware/qcom/neuralnetworks/hvxservice" groups="wahoo" remote="aosp_r17" />
 
   <!-- Native -->
-  <project path="bionic" name="android_bionic" remote="pd11" />
+  <project path="bionic" name="android_bionic" remote="opt" />
 
   <!-- Packages -->
   <project path="packages/apps/ElmyraService" name="android_packages_apps_ElmyraService" remote="pd11" />
